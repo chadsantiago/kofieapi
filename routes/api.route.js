@@ -8,7 +8,7 @@ const main_middleware = require('../middlewares/main.middleware')
 @method: GET
 @description: get all coffee
 */
-router.get('/', main_controller.get_all)
+router.get('/', api_controller.get_all)
 
 /*
 @path: /{coffee_id}
