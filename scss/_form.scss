@@ -5,14 +5,14 @@
     height: 45px;
     box-sizing: border-box;
     background-color: $input-bg;
-    outline: 1.5px solid $input-border;
-    border: none;
+    border: 1.5px solid $input-border;
     border-radius: 8px;
     color: $white;
     transition: .3s ease;
 
     &:focus {
-        outline: 1.5px solid $white;
+        border: 1.5px solid $white;
+        outline: 0;
         border-radius: 6px;
         transition: .3s ease;
     }
