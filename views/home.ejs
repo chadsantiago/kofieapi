@@ -1,0 +1,30 @@
+<%- include('partials/head.ejs') %>
+<title>Dashboard - Nostra Cuccina</title>
+</head>
+<body>
+
+    <section class="mt-2">
+        <div class="container">
+            <p class="title mb-2">Your menu.</p>
+
+            <div class="menu mb-4">
+                <% data.forEach(coffee => { %>
+                    <div class="card mb-1">
+                        <div class="mb-1">
+                            <p class="card-title capitalize"><%= coffee.item %></p>
+                            <p class="card-cat"><%= coffee.type %></p>
+                        </div>
+                        <div class="row">
+                            <p class="card-price">₱<%= coffee.price %></p>
+                            <a href="/coffee?id=<%= coffee._id %>" class="link"><i class='bx bxs-pencil card-icon'></i></a>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+            
+        </div>
+    </section>
+
+    <%- include('partials/nav.ejs') %>
+</body>
+</html>

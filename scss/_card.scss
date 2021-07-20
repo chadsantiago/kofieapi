@@ -1,0 +1,29 @@
+.card {
+    background-color: $input-bg;
+    padding: 15px;
+    border-radius: 10px;
+    line-height: 1;
+    letter-spacing: .5px;
+
+    .card-title {
+        font: 400 1rem $secondary-font;
+        color: $white;
+    }
+
+    .card-cat {
+        font: 450 .9rem $secondary-font;
+        color: $gray;
+    }
+
+    .card-price {
+        font: 400 1.2rem $primary-font;
+        color: $white;
+    }
+
+    .card-icon {
+        background-color: $primary-color;
+        color: $white;
+        padding: 5px;
+        border-radius: 5px;
+    }
+}

@@ -1,0 +1,61 @@
+.nav {
+    font-family: $secondary-font;
+    background-color: $secondary-color;
+    height: 60px;
+    width: 360px;
+    bottom: 0;
+    position: fixed;
+    display: flex;
+
+    .nav-icon {
+        color: $white;
+        font-size: 1.2rem;
+        padding: 8px;
+        border-radius: 5px;
+
+        &:hover {
+            background-color: $input-bg;
+        }
+    }
+
+    .home {
+        background-color: $input-bg;
+        color: $white;
+        padding: 7px 15px;
+        border-radius: 15px;
+
+        p {
+            font-size: .85rem;
+            font-weight: 450;
+        }
+    }
+}
+
+.full {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+
+    &:link {
+        text-decoration: none;
+        outline: 0;
+      }
+
+    &:visited {
+        text-decoration: none;
+        outline: 0;
+    }
+
+    &:active {
+        text-decoration: none;
+        outline: 0;
+    }
+
+    &:focus {
+        text-decoration: none;
+        outline: 0;
+    }
+}

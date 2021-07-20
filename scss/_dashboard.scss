@@ -1,0 +1,32 @@
+.title {
+    color: $white;
+    font: 500 1.5rem $secondary-font;
+    line-height: 1.2;
+}
+
+.modal {
+    background-color: $secondary-color;
+    height: 100%;
+    width: 100%;
+    opacity: 0.8;
+    position: fixed;
+    z-index: 4;
+    top: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+.box {
+    background-color: $white;
+    padding: 15px;
+    border-radius: 8px;
+    width: 220px;
+}
+
+.open {
+    visibility: visible;
+}
+
+.pointer {
+    cursor: pointer;
+}

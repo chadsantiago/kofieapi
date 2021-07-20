@@ -1,0 +1,45 @@
+// Color
+$primary-color: #6c5ecf;
+$secondary-color: #17181f;
+$white: #ffffff;
+$gray: #505261;
+$outline: #e8eaec;
+$menu-color: #6e6d7a;
+$shade: #b8c4c2;
+$error: #fe3554;
+$input-bg: #20212c;
+$input-border: #32313b;
+
+// Font
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100&display=swap');
+$primary-font: 'Space Mono', monospace;
+$secondary-font: 'Poppins', sans-serif;
+
+@mixin form-button($color) {
+    width: 100%;
+    color: $secondary-color;
+    background-color: $color;
+    font: 500 1rem $secondary-font;
+    padding: 12px 0;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+
+@mixin notif($color, $size) {
+    padding-left: 5px;
+    font-size: $size;
+    color: $color;
+}
+
+@mixin flex($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+
+$nav-width: 220px;

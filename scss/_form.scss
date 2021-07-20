@@ -1,0 +1,137 @@
+.input > input{
+    font: 400 1rem $secondary-font;
+    padding: 10px;
+    width: 100%;
+    height: 45px;
+    box-sizing: border-box;
+    background-color: $input-bg;
+    outline: 1.5px solid $input-border;
+    border: none;
+    border-radius: 8px;
+    color: $white;
+    transition: .3s ease;
+
+    &:focus {
+        outline: 1.5px solid $white;
+        border-radius: 6px;
+        transition: .3s ease;
+    }
+}
+
+select, option {
+    font: 400 1rem $secondary-font;
+    padding: 10px;
+    width: 100%;
+    height: 45px;
+    box-sizing: border-box;
+    background-color: $input-bg;
+    outline: 1.5px solid $input-border;
+    border: none;
+    border-radius: 8px;
+    color: $white;
+    transition: .3s ease;
+
+    &:focus {
+        outline: 1.5px solid $white;
+        border-radius: 6px;
+        transition: .3s ease;
+    }
+}
+
+.form-card {
+    color: $white;
+
+    .form-title {
+        font-size: 2.2rem;
+        font-weight: 600;
+    }
+    
+    .form-subtitle {
+        font-size: 1.8rem;
+        font-weight: 400;
+        line-height: 1.2;
+    }
+}
+
+form {
+    display: inline-block;
+    width: 100%;
+}
+
+.button {
+    @include form-button($white);
+}
+
+.save-btn {
+    font: 450 .8rem $secondary-font;
+    background-color: $primary-color;
+    color: $white;
+    padding: 4px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 0;
+}
+
+.del-btn {
+    font: 450 .8rem $secondary-font;
+    background-color: $error;
+    color: $white;
+    padding: 4px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 0;
+}
+
+.del-button {
+    @include form-button($error);
+}
+
+.sign {
+    color: $secondary-color;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.err {
+    @include notif($error, .8rem)
+}
+
+.log-link {
+    color: $secondary-color;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+input:active,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+
+    &:link {
+        text-decoration: none;
+        outline: 0;
+      }
+
+    &:visited {
+        text-decoration: none;
+        outline: 0;
+    }
+
+    &:active {
+        text-decoration: none;
+        outline: 0;
+    }
+
+    &:focus {
+        text-decoration: none;
+        outline: 0;
+    }
+}

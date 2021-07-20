@@ -1,0 +1,87 @@
+<%- include('partials/head.ejs') %>
+<title>Dashboard - Nostra Cuccina</title>
+</head>
+<body>
+
+    <section class="modal center-center">
+        <div class="container">
+            <div class="box text-center">
+                <p class=" pop-title mb-1">Are you sure you want delete <%= data.item %>?</p>
+                <div class="row-around">
+                    <p class="pointer" onclick="del()">Delete</p>
+                    <p class="pointer" onclick="showModal()">Cancel</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mt-3">
+        <div class="container center-center">
+            <div class="form-card">
+
+                <form action="/coffee?id=<%= data._id %>" method="POST" class="mt-1">
+
+                    <div class="mb-3 row-bottom">
+                        <input class="save-btn" type="submit" value="Save">
+                        <input class="del-btn" type="button" onclick="showModal()" value="Delete">
+                    </div>
+                    <div class="input">
+                        <input class="coffee" value="<%= data.item %>" name="coffee" required="" title="coffee" type="text" minlength="3" maxlength="30" autocomplete="off">
+                    </div>
+                    <p class="name-error err pb-0"></p>
+                    
+                    <div class="input mt-0">
+                        <input class="price" value="<%= data.price %>" name="price" required="" title="price" type="text" maxlength="3" pattern="^([0-9][0-9]*)$" autocomplete="off">
+                    </div>
+                    <p class="price-error err pb-0"></p>
+
+                    <select class="category mt-0" name="category" id="category" data-list-value="<%= data.type %>">
+                        <option value="hot">Hot</option>
+                        <option value="cold">Cold</option>
+                    </select>
+                    <p class="type-error err pb-0"></p>
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <%- include('partials/nav.ejs') %>
+
+    <script>
+        const type = document.querySelector('.category').dataset.listValue
+        document.querySelector('.category').value = type
+
+        const queryString = window.location.search
+        const urlParams = new URLSearchParams(queryString)
+
+        if (urlParams.get('price_error')) {
+            document.querySelector('.price-error').innerHTML = urlParams.get('price_error').replace(/-/g, ' ')
+        }
+        if (urlParams.get('type_error')) {
+            document.querySelector('.type-error').innerHTML = urlParams.get('type_error').replace(/-/g, ' ')
+        }
+
+        // delete function
+        const del = async () => {
+            try {
+                const res = await fetch('/delete' + `?id=${urlParams.get('id')}`, {
+                    method: 'DELETE'
+                })
+                const data = await res.json()
+                if (data.message) {
+                    location.assign('/')
+                }
+            }
+            catch (err) {
+                console.log(err)
+            }
+        }
+
+        // show modal
+        const showModal = () => {
+            document.querySelector('.modal').classList.toggle('open')
+        }
+    </script>
+</body>
+</html>
