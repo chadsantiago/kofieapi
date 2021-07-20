@@ -9,6 +9,9 @@
     border-radius: 8px;
     color: $white;
     transition: .3s ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 
     &:focus {
         border: 1.5px solid $white;
@@ -25,14 +28,15 @@ select, option {
     height: 45px;
     box-sizing: border-box;
     background-color: $input-bg;
-    outline: 1.5px solid $input-border;
-    border: none;
+    border: 1.5px solid $input-border;
     border-radius: 8px;
     color: $white;
     transition: .3s ease;
+    -webkit-appearance:none;
 
     &:focus {
-        outline: 1.5px solid $white;
+        outline: 0;
+        border: 1.5px solid $white;
         border-radius: 6px;
         transition: .3s ease;
     }

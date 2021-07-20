@@ -38,6 +38,9 @@ body {
   color: #ffffff;
   -webkit-transition: .3s ease;
   transition: .3s ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .input > input:focus {
@@ -56,16 +59,17 @@ select, option {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background-color: #20212c;
-  outline: 1.5px solid #32313b;
-  border: none;
+  border: 1.5px solid #32313b;
   border-radius: 8px;
   color: #ffffff;
   -webkit-transition: .3s ease;
   transition: .3s ease;
+  -webkit-appearance: none;
 }
 
 select:focus, option:focus {
-  outline: 1.5px solid #ffffff;
+  outline: 0;
+  border: 1.5px solid #ffffff;
   border-radius: 6px;
   -webkit-transition: .3s ease;
   transition: .3s ease;
@@ -202,7 +206,7 @@ a:focus {
 
 .nav .nav-icon {
   color: #ffffff;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   padding: 8px;
   border-radius: 5px;
 }
