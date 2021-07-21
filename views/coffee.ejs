@@ -1,5 +1,5 @@
 <%- include('partials/head.ejs') %>
-<title>Dashboard - Nostra Cuccina</title>
+<title><%= data.item %> - Kofie</title>
 </head>
 <body>
 
@@ -16,7 +16,7 @@
     </section>
 
     <section class="mt-3">
-        <div class="container center-center">
+        <div class="container">
             <div class="form-card">
 
                 <form action="/coffee?id=<%= data._id %>" method="POST" class="mt-1">
