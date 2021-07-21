@@ -17,7 +17,7 @@ mongoose.connect(process.env.DATABASE_URL,
     .then((result) => console.log('Connected to database'))
     .catch((err) => console.log(err))
 
-// middleware
+// force https
 if(process.env.NODE_ENV === 'production') {
     app.use((req, res, next) => {
     if (req.header('x-forwarded-proto') !== 'https')
@@ -26,6 +26,8 @@ if(process.env.NODE_ENV === 'production') {
         next()
     })
 }
+
+// middleware
 app.use(express.static('public'))
 app.use(express.urlencoded({extended: false}));
 app.use(cookie())
