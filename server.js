@@ -18,6 +18,14 @@ mongoose.connect(process.env.DATABASE_URL,
     .catch((err) => console.log(err))
 
 // middleware
+if(process.env.NODE_ENV === 'production') {
+    app.use((req, res, next) => {
+    if (req.header('x-forwarded-proto') !== 'https')
+        res.redirect(`https://${req.header('host')}${req.url}`);
+    else
+        next()
+    })
+}
 app.use(express.static('public'))
 app.use(express.urlencoded({extended: false}));
 app.use(cookie())
