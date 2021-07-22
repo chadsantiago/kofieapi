@@ -296,6 +296,12 @@ a:focus {
   cursor: pointer;
 }
 
+.error-title {
+  color: #ffffff;
+  font: 500 2.5rem "Poppins", sans-serif;
+  line-height: 1.4;
+}
+
 .card {
   background-color: #20212c;
   padding: 15px;

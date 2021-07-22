@@ -7,11 +7,11 @@ exports.coffee_id = async (req, res, next) => {
         coffee = await Coffee.findById(req.query.id)
         if (coffee == null) {
             // redirect to 404 page
-            return res.send('Cannot find coffee on the menu')
+            return res.render('error')
         }
     } catch(err) {
         // redirect to 404 page
-        return res.send('Cannot find coffee on the menu')
+        return res.render('error')
     }
     res.coffee = coffee
     next()

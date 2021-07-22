@@ -30,3 +30,9 @@
 .pointer {
     cursor: pointer;
 }
+
+.error-title {
+    color: $white;
+    font: 500 2.5rem $secondary-font;
+    line-height: 1.4;
+}

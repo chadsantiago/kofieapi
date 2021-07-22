@@ -49,7 +49,7 @@ app.use('/api/menu', api_router)
 
 // 404 error
 app.get('*', (req, res) => {
-    res.send('error')
+    res.render('error')
 })
 
 // port
