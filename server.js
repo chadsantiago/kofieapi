@@ -5,6 +5,9 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 
+// cors
+const cors = require('cors')
+
 // mongoose
 const mongoose = require('mongoose')
 
@@ -31,6 +34,7 @@ if(process.env.NODE_ENV === 'production') {
 app.use(express.static('public'))
 app.use(express.urlencoded({extended: false}));
 app.use(cookie())
+app.use(cors())
 
 // register view engine
 app.set('view engine', 'ejs')
